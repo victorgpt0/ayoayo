@@ -1,0 +1,7 @@
+first step is to initialize the class and make sure it can run code on my terminal with Hello World.
+
+we then need a player class that initializes the player object.
+
+we also need to setup player 1 and 2 to be class members of Ayoayo class throught the setPlayer() method
+
+I thought about using arrays to store the players and their store of seeds instead of using a variable for each. But still the game can onlt take two players at a time.
