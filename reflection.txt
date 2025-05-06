@@ -9,3 +9,13 @@ I thought about using arrays to store the players and their store of seeds inste
 Once i got to making the pits, I noticed that I would need 2-Dimensional Arrays if I was to do it in the same way I did the stores so I decided to make them part of player instance variables
 
 Decided to use a List Data structure to combine the pits and store for both players according to the output of playGame
+
+The playGame logic is commented in the code...
+
+The implementation for this program has used a main assumption that there will ever only be two players at a time. This means that if there were to have a third player, it would not function as expected.
+
+There are also other code refactoring that has been done, for example, the combined list of pits and stores has been put in both the returnWinner method and the main method to show the state of the list before and after the seeds are put in the store from the pits at the end of execution.
+
+I have tested it to my satisfaction.
+
+I think java is a pretty good language for Object-Oriented Programming and is also fast and stable for big tech.

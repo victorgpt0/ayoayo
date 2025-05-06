@@ -130,6 +130,7 @@ public class Ayoayo {
         game.playGame(1, 6);
 
         game.printBoard();
+        System.out.println(game.combinedList());
         game.returnWinner();
     }
 }
