@@ -50,6 +50,13 @@ public class Player {
         pit[index] = 0;
         return seeds;
     }
+
+    public boolean isEmptyPits(){
+        for(int seeds : pit){
+            if(seeds != 0){
+                return false;
+            }
+        }
+        return true;
+    }
 }
-
-

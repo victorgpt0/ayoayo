@@ -41,9 +41,10 @@ public class Ayoayo {
             seeds--;
         }
         //if last seed is in my pit and that pit is empty, take the seeds from the opponent exactly opposite pit
+        int oppositeIndex = (player == 0) ? 1 : 0;
         if(seeds == 1 && players[player].getPit()[currentIndex] == 0){
             int oppositePit = 5 - currentIndex;
-            int oppositeSeeds = players[player + 1].emptyPit(oppositePit);
+            int oppositeSeeds = players[oppositeIndex].emptyPit(oppositePit);
             players[player].addToStore(oppositeSeeds + seeds);
         }
         //and the rest add to the store
@@ -55,7 +56,7 @@ public class Ayoayo {
         //add the rest to the opponents pits
         currentIndex=0;
         while(seeds > 0 && currentIndex < 5){
-            players[player + 1].addToPit(currentIndex, 1);
+            players[oppositeIndex].addToPit(currentIndex, 1);
             currentIndex++;
             seeds--;
         }
@@ -87,6 +88,26 @@ public class Ayoayo {
     }
 
     public void returnWinner(){
+        if(players[0].isEmptyPits() || players[1].isEmptyPits()){
+            System.out.println("Game is ended!");
+            Player remainingPlayer = players[0].isEmptyPits() ? players[1] : players[0];
+
+            for(int i = 0; i < remainingPlayer.getPit().length; i++){
+                int remainingSeeds = remainingPlayer.emptyPit(i);
+                remainingPlayer.addToStore(remainingSeeds);
+            }
+            if(players[0].getStore() > players[1].getStore()){
+                System.out.println("Winner is  player 1: " + players[0].getName());
+            } else if(players[0].getStore() < players[1].getStore()){
+                System.out.println("Winner is player 2: " + players[1].getName());
+            } else{
+                System.out.println("It's a tie");
+            }
+
+        } else{
+            System.out.println("Game has not ended");
+        }
+
         System.out.println(combinedList());
     }
 
@@ -99,9 +120,16 @@ public class Ayoayo {
         game.setPlayer2(p2);
 
         game.playGame(1,1);
+        game.playGame(2,1);
         game.playGame(1,2);
+        game.playGame(1,2);
+        game.playGame(1,3);
+        game.playGame(1,3);
+        game.playGame(1,4);
         game.playGame(1,5);
+        game.playGame(1, 6);
 
-
+        game.printBoard();
+        game.returnWinner();
     }
 }
