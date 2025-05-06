@@ -8,3 +8,4 @@ I thought about using arrays to store the players and their store of seeds inste
 
 Once i got to making the pits, I noticed that I would need 2-Dimensional Arrays if I was to do it in the same way I did the stores so I decided to make them part of player instance variables
 
+Decided to use a List Data structure to combine the pits and store for both players according to the output of playGame

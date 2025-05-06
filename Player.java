@@ -44,6 +44,12 @@ public class Player {
             System.out.println("Not enough seeds in pit to remove.");
         }
     }
+
+    public int emptyPit(int index){
+        int seeds = pit[index];
+        pit[index] = 0;
+        return seeds;
+    }
 }
 
 
